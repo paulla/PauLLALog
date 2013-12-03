@@ -12,10 +12,10 @@
             function event1(MycheckBox) {
         if(MycheckBox.name == "event1box") {
             if(MycheckBox.checked) {
-                document.getElementsById('event1').style.display = 'inline-block';
+                document.getElementById('event1').style.display = 'inline-block';
             }
             else {
-                document.getElementsById('event1').style.display = 'none';
+                document.getElementById('event1').style.display = 'none';
             }
         }
     }
