@@ -16,7 +16,7 @@
     function event1(MycheckBox) {
         if(MycheckBox.name == "event1box") {
             if(MycheckBox.checked) {
-                document.getElementsByClassName('event1').style.display = 'inline-block';
+                document.getElementsById('event1').style.display = 'inline-block';
             }
             else {
                 document.getElementsByClassName('event1').style.display = 'none';
