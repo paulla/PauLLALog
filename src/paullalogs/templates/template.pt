@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal">
+<head>
+  <title>Log IRC du ${date} </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <link rel="stylesheet" href="${request.static_url('paullalogs:static/pikaday.css')}">
+  <link rel="stylesheet" href="${request.static_url('paullalogs:static/style.css')}">
+  <link rel="shortcut icon" type="image/x-icon" href="${request.static_url('paullalogs:static/favicon.ico')}">
+</head>
+<body>
+    <h1>Log du ${date}</h1>
+    <!--<h2>Topic</h2> -->
+        <div class="filtre">
+            <p>
+<script lang="javascript">
+    function event1(MycheckBox) {
+        if(MycheckBox.name == "event1box") {
+            if(MycheckBox.checked) {
+                document.getElementsByClassName('event1').style.display = 'inline-block';
+            }
+            else {
+                document.getElementsByClassName('event1').style.display = 'none';
+            }
+        }
+    }
+</script>
+            <div class="calendrier">
+                <button id="datepicker">Change Date</button>
+            </div>
+            <div class="event1box">Afficher les joins/quits ? <input type="checkbox" name="event1box" onclick="event1(this)" />
+            </div>
+        </div>
+        <div class="log" tal:condition="exists:logs">
+            <ul tal:repeat="log logs">
+                <li tal:condition="log.nick">
+                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure">15:00</span>
+                    <span tal:content="log.nick" class="pseudo">AntoineVe</span>
+                    <span tal:content="log.message" class="texte">Bonjour !</span>
+                </li>
+                <li tal:condition="log.nick is None and ('quit' in log.message or 'join' in log.message or 'has' in log.message)" >
+                    <span tal:content="log.message" class="event1" id="event1">Mika joins #Paulla</span>
+                </li>
+                <li tal:condition="log.nick is None and not 'quit' in log.message and not 'join' in log.message and not 'has' in log.message">
+                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure">15:00</span>
+                    <span tal:content="log.message" class="event2">Fo0 slaps Mika with a big C# book</span>
+                </li>
+            </ul>
+        </div>    
+        <div tal:condition="not:exists:logs">
+            <p> Aucun log pour la date ${date}</p>
+        </div>
+    <script src="${request.static_url('paullalogs:static/moment.min.js')}"></script>
+    <script src="${request.static_url('paullalogs:static/pikaday.js')}"></script>
+    <script>
+
+     // You can get and set dates with moment objects
+     var picker = new Pikaday(
+     {
+         field: document.getElementById('datepicker'),
+         firstDay: 0,
+         minDate: new Date('2000-01-01'),
+         maxDate: new Date('2020-12-31'),
+         yearRange: [2000,2020],
+         onSelect: function() {
+             var date = this.getMoment().format('DD-MM-YYYY');
+             window.location = '${request.route_url("home")}' + date;
+         }
+     });
+    
+     //picker.setMoment(moment().dayOfYear(366));
+    
+    </script>
+</body>
+</html>
