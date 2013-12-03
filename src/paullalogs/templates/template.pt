@@ -19,7 +19,7 @@
                 document.getElementsById('event1').style.display = 'inline-block';
             }
             else {
-                document.getElementsByClassName('event1').style.display = 'none';
+                document.getElementsById('event1').style.display = 'none';
             }
         }
     }
