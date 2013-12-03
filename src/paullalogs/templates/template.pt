@@ -8,12 +8,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="${request.static_url('paullalogs:static/favicon.ico')}">
 </head>
 <body>
-    <h1>Log du ${date}</h1>
-    <!--<h2>Topic</h2> -->
-        <div class="filtre">
-            <p>
-<script lang="javascript">
-    function event1(MycheckBox) {
+<script language="javascript" type="text/javascript">
+            function event1(MycheckBox) {
         if(MycheckBox.name == "event1box") {
             if(MycheckBox.checked) {
                 document.getElementsById('event1').style.display = 'inline-block';
@@ -24,30 +20,32 @@
         }
     }
 </script>
-            <div class="calendrier">
-                <button id="datepicker">Change Date</button>
-            </div>
-            <div class="event1box">Afficher les joins/quits ? <input type="checkbox" name="event1box" onclick="event1(this)" />
-            </div>
-        </div>
+    <h1>Log du ${date}</h1>
+    <!--<h2>Topic</h2> -->
+		<div class="calendrier">
+			<button id="datepicker">Choisir la date</button>
+		</div>
+		<div class="event1box">
+			<p>Afficher les rejoint / quitte ?</p><input type="checkbox" name="event1box" onclick="event1(this)" />
+		</div>
         <div class="log" tal:condition="exists:logs">
             <ul tal:repeat="log logs">
                 <li tal:condition="log.nick">
-                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure">15:00</span>
-                    <span tal:content="log.nick" class="pseudo">AntoineVe</span>
-                    <span tal:content="log.message" class="texte">Bonjour !</span>
+                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure"></span>
+                    <span tal:content="log.nick" class="pseudo"></span>
+                    <span tal:content="log.message" class="texte"></span>
                 </li>
                 <li tal:condition="log.nick is None and ('quit' in log.message or 'join' in log.message or 'has' in log.message)" >
-                    <span tal:content="log.message" class="event1" id="event1">Mika joins #Paulla</span>
+                    <span tal:content="log.message" class="event1" id="event1"></span>
                 </li>
                 <li tal:condition="log.nick is None and not 'quit' in log.message and not 'join' in log.message and not 'has' in log.message">
-                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure">15:00</span>
-                    <span tal:content="log.message" class="event2">Fo0 slaps Mika with a big C# book</span>
+                    <span tal:content="'%s:%s' % (log.hour,log.minute)" class="heure"></span>
+                    <span tal:content="log.message" class="event2"></span>
                 </li>
             </ul>
         </div>    
         <div tal:condition="not:exists:logs">
-            <p> Aucun log pour la date ${date}</p>
+            <h2>Aucun log pour le ${date}.<h2>
         </div>
     <script src="${request.static_url('paullalogs:static/moment.min.js')}"></script>
     <script src="${request.static_url('paullalogs:static/pikaday.js')}"></script>
