@@ -8,25 +8,13 @@
   <link rel="shortcut icon" type="image/x-icon" href="${request.static_url('paullalogs:static/favicon.ico')}">
 </head>
 <body>
-<script language="javascript" type="text/javascript">
-            function event1(MycheckBox) {
-        if(MycheckBox.name == "event1box") {
-            if(MycheckBox.checked) {
-                document.getElementById('event1').style.display = 'inline-block';
-            }
-            else {
-                document.getElementById('event1').style.display = 'none';
-            }
-        }
-    }
-</script>
     <h1>Log du ${date}</h1>
     <!--<h2>Topic</h2> -->
 		<div class="calendrier">
 			<button id="datepicker">Choisir la date</button>
 		</div>
 		<div class="event1box">
-			<p>Afficher les rejoint / quitte ?</p><input type="checkbox" name="event1box" onclick="event1(this)" />
+			<input type="button" id="toggleEvent1" value="(Afficher|Cacher) les join/quit" />
 		</div>
         <div class="log" tal:condition="exists:logs">
             <ul tal:repeat="log logs">
@@ -68,5 +56,46 @@
      //picker.setMoment(moment().dayOfYear(366));
     
     </script>
+<script>
+function getElementsByClassName(node,classname) {
+	if (node.getElementsByClassName) { // use native implementation if available
+		return node.getElementsByClassName(classname);
+	} else {
+		return (function getElementsByClass(searchClass,node) {
+			if ( node == null )
+				node = document;
+		var classElements = [],
+		els = node.getElementsByTagName("*"),
+		elsLen = els.length,
+		pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)"), i, j;
+		for (i = 0, j = 0; i < elsLen; i++) {
+			if ( pattern.test(els[i].className) ) {
+				classElements[j] = els[i];
+				j++;
+			}
+        }
+		return classElements;
+		})(classname, node);
+	}
+}
+
+function toggle_visibility(className) {
+	var elements = getElementsByClassName(document, className),
+	n = elements.length;
+	for (var i = 0; i < n; i++) {
+		var e = elements[i];
+		if(e.style.display == 'inline-block') {
+			e.style.display = 'none';
+		} else {
+			e.style.display = 'inline-block';
+		}
+	}
+}
+
+document.getElementById('toggleEvent1').onclick = function () {
+	toggle_visibility('event1');
+};
+
+</script>
 </body>
 </html>

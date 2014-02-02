@@ -54,9 +54,10 @@ ul li span {
     margin-left: 2em;
 }
 .event1box {
-	font-size: 90%;
-	float: right;
-	
+    font-size: 90%;
+    position: fixed;
+    top: 50px;
+    right: 5px;
 }
 .calendrier {
 	float: left;
