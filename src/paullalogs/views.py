@@ -12,10 +12,18 @@ _re_line = re.compile(settings['message_format'], re.VERBOSE)
 @view_config(route_name='home')
 def my_view(request):
     year = datetime.now().year
-    month = datetime.now().month
+    month = datetime.now().strftime("%m")
     day = datetime.now().strftime("%d")
     channels = settings['channels']
-    return HTTPFound(location=request.route_url('date',day = day, month = month, year = year, channel = channels[0]))
+    if '\n' in channels:
+        channels = [chan for chan in channels.splitlines() if chan]
+    return HTTPFound(
+            location=request.route_url(
+                'date',
+                day = day, 
+                month = month, 
+                year = year, 
+                channel = channels[0]))
 
 @view_config(route_name='date', renderer='templates/template.pt')
 def date_view(request):
