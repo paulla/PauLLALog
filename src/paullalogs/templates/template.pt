@@ -15,6 +15,12 @@
 		</div>
 		<div class="event1box">
 			<input type="button" id="toggleEvent1" value="(Afficher|Cacher) les join/quit" />
+            <br>
+            <form action="${request.route_url('date', channel = channel, day = date[0:2], month = date[3:5], year = date[6:])}" method="post">
+                <select name="channel">
+                    <option tal:repeat="chan channels" value="${chan}" onClick="this.form.submit()">${chan}</option>
+                </select>
+            </form>
 		</div>
         <div class="log" tal:condition="exists:logs">
             <ul tal:repeat="log logs">
