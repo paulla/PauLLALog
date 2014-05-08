@@ -13,7 +13,7 @@ _re_line = re.compile(settings['message_format'], re.VERBOSE)
 @view_config(route_name='home')
 def my_view(request):
     year = datetime.now().year
-    month = datetime.now().month
+    month = datetime.now().strftime('%m')
     day = datetime.now().strftime("%d")
     return HTTPFound(location=request.route_url('date',day = day, month = month, year = year))
 
@@ -29,11 +29,14 @@ def date_view(request):
     if os.path.exists(path_log + file_format.format(year=year,month=month,day=day)):
         with open(path_log + file_format.format(year=year,month=month,day=day)) as f:
             for line in f.readlines():
-                match = _re_line.search(line.decode('utf-8','replace'))
-                if not match:
-                    raise ValueError('Unhandled line %r' % line)
-                data = match.groupdict()
-                logs.append(data)
+                try:
+                    match = _re_line.search(line.decode('utf-8','replace'))
+                    if not match:
+                        raise ValueError('Unhandled line %r' % line)
+                    data = match.groupdict()
+                    logs.append(data)
+                except:
+                    pass
         return {
                 'logs': logs,
                 'date': date,}
