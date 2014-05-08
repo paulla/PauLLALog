@@ -1,0 +1,431 @@
+Traceback (most recent call last):
+  File "./bin/pserve", line 31, in <module>
+    sys.exit(pyramid.scripts.pserve.main())
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 50, in main
+    return command.run()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 304, in run
+    global_conf=vars)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 328, in loadapp
+    return loadapp(app_spec, name=name, relative_to=relative_to, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 247, in loadapp
+    return loadobj(APP, uri, name=name, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 272, in loadobj
+    return context.create()
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 710, in create
+    return self.object_type.invoke(self)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 146, in invoke
+    return fix_call(context.object, context.global_conf, **context.local_conf)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/util.py", line 56, in fix_call
+    val = callable(*args, **kw)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/__init__.py", line 21, in main
+    config.scan()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/__init__.py", line 947, in scan
+    ignore=ignore)
+  File "/usr/home/botanik/PauLLALog/eggs/venusian-1.0a8-py2.7.egg/venusian/__init__.py", line 199, in scan
+    __import__(modname)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 11, in <module>
+    _re_line = re.compile(settings['message_format'], re.VERBOSE)
+KeyError: 'message_format'
+Removing PID file pyramid.pid
+Starting server in PID 6030.
+serving on http://192.168.42.67:6543
+Starting server in PID 25963.
+serving on http://192.168.42.67:6543
+Starting server in PID 16083.
+serving on http://192.168.42.67:6543
+Starting server in PID 16823.
+serving on http://192.168.42.67:6543
+2014-01-05 20:46:31,344 ERROR [waitress][Dummy-1] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 20:46:35,448 ERROR [waitress][Dummy-2] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 22:16:36,674 ERROR [waitress][Dummy-2] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 22:16:38,753 ERROR [waitress][Dummy-3] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 22:16:39,451 ERROR [waitress][Dummy-2] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 23:37:32,763 ERROR [waitress][Dummy-3] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 23:38:53,800 ERROR [waitress][Dummy-2] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-05 23:41:33,122 ERROR [waitress][Dummy-4] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-06 01:01:46,232 ERROR [waitress][Dummy-4] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-06 01:02:00,355 ERROR [waitress][Dummy-3] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-06 01:02:05,693 ERROR [waitress][Dummy-4] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    raise ValueError('Unhandled line %r' % line)
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+2014-01-06 01:15:50,568 ERROR [waitress][Dummy-4] Exception when serving /05-01-2014
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 347, in rendered_view
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34, in date_view
+    if not match:
+ValueError: Unhandled line '2014-01-05T20:41:04  -rothfuss.freenode.net- *** Notice -- TS for #paulla changed from 1388950703 to 1166769145\n'
+Traceback (most recent call last):
+  File "./bin/pserve", line 31, in <module>
+    sys.exit(pyramid.scripts.pserve.main())
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 50, in main
+    return command.run()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 304, in run
+    global_conf=vars)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 328, in loadapp
+    return loadapp(app_spec, name=name, relative_to=relative_to, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 247, in loadapp
+    return loadobj(APP, uri, name=name, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 272, in loadobj
+    return context.create()
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 710, in create
+    return self.object_type.invoke(self)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 146, in invoke
+    return fix_call(context.object, context.global_conf, **context.local_conf)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/util.py", line 56, in fix_call
+    val = callable(*args, **kw)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/__init__.py", line 21, in main
+    config.scan()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/__init__.py", line 947, in scan
+    ignore=ignore)
+  File "/usr/home/botanik/PauLLALog/eggs/venusian-1.0a8-py2.7.egg/venusian/__init__.py", line 199, in scan
+    __import__(modname)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 33
+    match = _re_line.search(line.decode('utf-8','replace'))
+                                                          ^
+IndentationError: unindent does not match any outer indentation level
+Removing PID file pyramid.pid
+Traceback (most recent call last):
+  File "./bin/pserve", line 31, in <module>
+    sys.exit(pyramid.scripts.pserve.main())
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 50, in main
+    return command.run()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 304, in run
+    global_conf=vars)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/scripts/pserve.py", line 328, in loadapp
+    return loadapp(app_spec, name=name, relative_to=relative_to, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 247, in loadapp
+    return loadobj(APP, uri, name=name, **kw)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 272, in loadobj
+    return context.create()
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 710, in create
+    return self.object_type.invoke(self)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/loadwsgi.py", line 146, in invoke
+    return fix_call(context.object, context.global_conf, **context.local_conf)
+  File "/usr/home/botanik/PauLLALog/eggs/PasteDeploy-1.5.0-py2.7.egg/paste/deploy/util.py", line 56, in fix_call
+    val = callable(*args, **kw)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/__init__.py", line 21, in main
+    config.scan()
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/__init__.py", line 947, in scan
+    ignore=ignore)
+  File "/usr/home/botanik/PauLLALog/eggs/venusian-1.0a8-py2.7.egg/venusian/__init__.py", line 199, in scan
+    __import__(modname)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 34
+    if not match:
+                ^
+IndentationError: unindent does not match any outer indentation level
+Removing PID file pyramid.pid
+Starting server in PID 60694.
+serving on http://192.168.42.67:6543
+Starting server in PID 99018.
+serving on http://192.168.42.67:6543
+2014-01-09 21:25:47,378 ERROR [waitress][Dummy-1] Exception when serving /
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 377, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 16, in my_view
+    month = datetime.now().month.strftime('%m')
+AttributeError: 'int' object has no attribute 'strftime'
+2014-01-09 21:25:48,788 ERROR [waitress][Dummy-2] Exception when serving /
+Traceback (most recent call last):
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/channel.py", line 337, in service
+    task.service()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 173, in service
+    self.execute()
+  File "/usr/home/botanik/PauLLALog/eggs/waitress-0.8.8-py2.7.egg/waitress/task.py", line 392, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 251, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 227, in invoke_subrequest
+    response = handle_request(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/tweens.py", line 21, in excview_tween
+    response = handler(request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/router.py", line 161, in handle_request
+    response = view_callable(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 377, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/home/botanik/PauLLALog/eggs/pyramid-1.4.5-py2.7.egg/pyramid/config/views.py", line 493, in _requestonly_view
+    response = view(request)
+  File "/usr/home/botanik/PauLLALog/src/paullalogs/views.py", line 16, in my_view
+    month = datetime.now().month.strftime('%m')
+AttributeError: 'int' object has no attribute 'strftime'
+Starting server in PID 99124.
+serving on http://192.168.42.67:6543
+Starting server in PID 46419.
+serving on http://192.168.42.67:6543
+Starting server in PID 60877.
+serving on http://192.168.42.67:6543
+Starting server in PID 68888.
+serving on http://192.168.42.67:6543
